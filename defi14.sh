@@ -3,11 +3,7 @@ IFS=$'\n'
 cd $1
 fold=`ls -1AF|grep "/$"|tr -d "/$" `
 files=`find -maxdepth 1 -type f|sed "s+^./++g"`
-#echo -e "\033[31m"
-#echo $fold
-#echo -e "\033[32m"
-#echo $files
-#echo -e "\033[0m"
+
 
 for item in $fold; do
 out=$out"$item \\ \033[32m `ls $item |grep "" -c` \033[0m"
